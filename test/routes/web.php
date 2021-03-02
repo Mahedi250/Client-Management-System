@@ -32,6 +32,8 @@ Route::post('/home/edit/{id}', 'HomeController@update');
 Route::get('/home/delete/{id}', 'HomeController@destroy');
 //Route::post('/home/delete/{id}', 'HomeController@destroy');
 
-route::get('/alllogin','AllLoginController@index');
+route::get('/alllogin','AllLoginController@index')->name('login');
 route::post('/alllogin','AllLoginController@varify');
+route::get('/signup', 'registraion@index');
+route::post('/signup', 'registraion@store');
 

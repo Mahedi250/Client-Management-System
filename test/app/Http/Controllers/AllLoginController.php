@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 
 
+
 class AllLoginController extends Controller
 {
     /**
@@ -29,7 +30,24 @@ class AllLoginController extends Controller
     public function varify(login_req $req)
     {
 
-        $validation=$req->validate();
+
+         $login =allLogin::where('email',$req->username)
+           ->where('password',$req->password)->get();
+
+
+
+        if(count($login)>0){
+
+
+           echo "welcome";
+
+
+        }
+
+
+
+
+
 
 
 

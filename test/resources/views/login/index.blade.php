@@ -13,17 +13,21 @@
 			<table>
 				<tr>
 					<td>Email</td>
-					<td><input type="text" name="username"></td>
-                    <td> </td>
+					<td><input type="text" value="{{old('username')}}" name="username"></td>
+                    <td> @if ($errors->has('username'))
+                            {{ $errors->first('username') }}
+                        @endif</td>
 				</tr>
 				<tr>
 					<td>Password</td>
-					<td><input type="password" name="password"></td>
-                    <td>  </td>
+					<td><input type="password" value="{{old('password')}}" name="password"></td>
+                    <td> @if ($errors->has('password'))
+                            {{ $errors->first('password') }}
+                        @endif </td>
 				</tr>
 				<tr>
-					<td><input type="submit" name="submit" value="Submit"></td>
-					<td></td>
+					<td><input type="submit" name="submit" value="Login"></td>
+					<td><a href="/signup"  > Registraion </a> </td>
 				</tr>
 			</table>
 		</fieldset>
